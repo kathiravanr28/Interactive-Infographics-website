@@ -1,0 +1,81 @@
+.menu-container {
+  position: relative;
+  width: 100%;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  /* pointer-events: none; children will enable pointer-events individually */
+}
+
+/* main center circle */
+.Center-Circle{
+  pointer-events: auto;
+  width: 130px;
+  height: 130px;
+  top: 18rem;
+  left: calc(50% - 47.1rem);
+  left: calc(50% - 46.5rem);
+  border-radius:50%;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-weight:700;
+  color:white;
+  cursor:pointer;
+  z-index:40;
+  position:relative;
+  background-color: aqua;
+  opacity:0;
+  transform: scale(0.45);
+  transition: opacity 600ms ease, transform 600ms cubic-bezier(.2,.9,.2,1);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.55);
+  overflow: hidden;
+}
+
+/* background image */
+.Center-Circle .Main-Circle {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+/* label text */
+.Center-Circle .circle-label {
+  position: relative;
+  z-index: 1;
+  background: rgba(8, 0, 0, 0.733);
+  padding: 4px 8px;
+  border-radius: 30px;
+  font-size: 14px;
+  color: #ff004f;
+  text-align: center;
+}
+
+.Center-Circle.show{
+  opacity:1;
+  transform: scale(1);
+}
+.Center-Circle:hover {
+  box-shadow: 0 16px 40px rgba(188, 11, 11, 0.75);
+  transform: scale(1);
+}
+.Center-Circle:hover .circle-label {
+  color: rgb(252, 250, 250);
+  background: rgb(6, 0, 0);
+}
+.background-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: black; /* fallback color */
+  object-fit: cover;   /* fill screen */
+  z-index: 0;         /* behind everything */
+  pointer-events: none; /* don’t block clicks */
+  opacity: 1;
+}
+
